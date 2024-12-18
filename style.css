@@ -1,0 +1,286 @@
+/* Base Styles */
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+body {
+    background: black;
+    background-image: radial-gradient(circle at 20% 30%, rgba(100, 100, 100, 0.3), transparent 70%),
+                      radial-gradient(circle at 80% 50%, rgba(50, 50, 50, 0.4), transparent 60%),
+                      radial-gradient(circle at 50% 90%, rgba(80, 80, 80, 0.5), transparent 80%);
+}
+
+/* Navbar */
+.navbar {
+    font-family: Calibri;
+    padding: 10px;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+}
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo a {
+    font-size: 30px;
+    font-weight: 600;
+    color: #d6bd91;
+    font-family: 'Playfair Display', serif;
+    transition: color 0.3s;
+}
+.logo a:hover {
+    color: #ffcc00;
+}
+li {
+    list-style: none;
+    display: inline-block;
+    margin-top: 5px;
+}
+li a {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 30px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+li a:hover {
+    color: #ffcc00;
+}
+button {
+    background: #c1903d;
+    margin-left: 10px;
+    padding: 6px;
+    width: 70px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background: #ffcc00;
+}
+button a {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+/* Typography */
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 60px;
+}
+p {
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 50px auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Video Banner */
+.video-banner {
+    position: relative;
+    width: 80%;
+    height: 600px;
+    overflow: hidden;
+    margin: 20px auto;
+}
+.video-banner video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Footer */
+footer {
+    color: #fff;
+    padding: 20px 10px;
+    text-align: center;
+    margin-top: 50px;
+    background-color: #0b0b0b;
+}
+footer .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+footer .footer-section {
+    flex: 1 1 250px;
+    margin: 20px;
+}
+footer .footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffcc00;
+}
+footer .footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+footer .footer-section ul li {
+    margin-bottom: 10px;
+}
+footer .footer-section ul li a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+footer .footer-section ul li a:hover {
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navdiv {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .video-banner {
+        width: 100%;
+        height: 400px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    p {
+        font-size: 1.2em;
+    }
+    footer .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 480px) {
+    h1 {
+        font-size: 30px;
+    }
+    li a {
+        font-size: 14px;
+    }
+    button {
+        padding: 5px 8px;
+    }
+    footer .footer-section {
+        text-align: center;
+    }
+}
+.appform{
+    display: inline;
+    text-align: center;
+ }
+ .appform h5{
+ color: white;
+ font-size: 50px;
+ }
+ .appform a{
+     text-align: center;
+     font-size: 50px;
+     color: #c1903d;
+     margin-left: 10px;
+     transition: 0.3s;
+ }
+ .appform a:hover{
+ color: #ffcc00;
+ }
+  a {
+     position: relative; /* To position the pseudo-element relative to the link */
+     text-decoration: none; /* Remove the default underline */
+     color: #ffcc00; /* Link color */
+     font-size: 18px; /* Adjust the font size as needed */
+     font-weight: bold; /* Optional: make the link text bold */
+   }
+   
+   a::before {
+     content: ''; /* Empty content for the pseudo-element */
+     position: absolute;
+     bottom: 0; /* Position at the bottom of the link */
+     left: 0; /* Start from the left */
+     width: 0; /* Start with no width */
+     height: 2px; /* Height of the underline */
+     background-color: #ffcc00; /* Color of the underline */
+     transition: width 0.3s ease-out; /* Animation for the underline */
+   }
+   
+   a:hover::before {
+     width: 100%; /* On hover, make the width 100% */
+   }
+   .proposal{
+     color: #c1903d;
+     transition: 0.3s;
+     font-size: 15px;
+   }
+   .proposal:hover{
+ color: #ffcc00;
+   }
+   footer p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+.objectives{
+    color: white;
+    font-size:1.5em ;
+    margin-left: 450px;
+    }
+    .joinuslist{
+        color: white;
+        font-size:1.5em ;
+        text-align: center;
+    }
+    .highlight{
+        color: #c1903d;
+        font-weight: bold;
+    }
+    h2{
+        color: #c1903d;
+        text-align: center;
+        font-size: 40px;}
+        footer .social-icons {
+            margin-top: 15px;
+        }
+        
+        footer .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        
+        footer .social-icons a:hover {
+            color: #ffcc00; /* Highlight social icons on hover */
+        }
