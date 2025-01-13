@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Scaroshka</title>
+    <link rel="icon" href="images/logo.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body style="background-color: black">
+    <nav class="navbar">
+      <div class="navdiv">
+        <!-- Hamburger Button (Outside nav-items) -->
+        <button class="hamburger" aria-label="Toggle navigation">☰</button>
+        <div class="logo"><a href="index.html">SCAROSHKA</a></div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-items">
+          <li><a href="teamRoles.html">Team roles</a></li>
+
+          <li><a href="guidelines.html">Guidelines and Agreements</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="whowe">
+      <div class="animated-text">
+        <h1 id="animated-heading">SCAROSHKA IS COMING SOON...</h1>
+      </div>
+
+      <script>
+        function animateText() {
+          const heading = document.getElementById("animated-heading");
+          const text = heading.textContent;
+          heading.textContent = ""; // Clear original text
+
+          // Wrap each letter in a span and apply animation
+          text.split("").forEach((char, index) => {
+            const span = document.createElement("span");
+            span.textContent = char;
+            span.style.setProperty("--index", index);
+            heading.appendChild(span);
+          });
+        }
+
+        // Initial animation
+        animateText();
+
+        // Automatically renew animation every 5 seconds
+        setInterval(animateText, 4000);
+      </script>
+
+      <a class="link-box" href="pdf/Scaroshka's proposal.pdf">who are we</a>
+    </div>
+
+    <div class="content">
+      <!-- Video Banner -->
+      <div class="video-banner">
+        <video id="videoBanner" autoplay loop muted>
+          <source src="videos/scaroshka video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <script>
+        // Toggle sound on click
+        document
+          .getElementById("videoBanner")
+          .addEventListener("click", function () {
+            this.muted = !this.muted; // Toggle mute state
+          });
+      </script>
+
+      <!-- Appform Text Section -->
+      <div class="appform">
+        <p>
+          Our startup isn’t simply about producing unique clothing; it’s about
+          creating wearable art pieces with collectible value. Each collection
+          is part of a larger, evolving narrative world that expresses our
+          identity through surreal, curiosity-provoking stories designed to
+          captivate our audience.Our brand blends casual wear with artistic
+          elements, appealing to a broad audience who values creativity,
+          quality, and distinctiveness. By making our designs memorable and
+          widely available, Scaroshka carves a space in the fashion market as a
+          go-to choice for those seeking clothing that’s both unique and
+          effortlessly wearable.
+        </p>
+
+        <a class="formlink" href="https://he2tak6m.forms.app/application-form"
+          >Join us now</a
+        >
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-section">
+          <h4>About Us</h4>
+          <p>
+            Our mission is to share our stories in a way that inspires and
+            immerses, creating a fictional world that reveals the wonders and
+            mysteries of life and reflects these insights in every design.
+            <a class="proposal" href="pdf/Scaroshka's proposal.pdf"
+              >know more by reading our proposal</a
+            >
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pdf/Scaroshka's proposal.pdf">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <p>&copy; 2024 scaroshka. All rights reserved.</p>
+    </footer>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navItems = document.querySelector(".nav-items");
+
+      hamburger.addEventListener("click", () => {
+        navItems.classList.toggle("show"); // Toggle visibility of nav items
+      });
+    </script>
+  </body>
+</html>
